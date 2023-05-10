@@ -41,7 +41,7 @@ export class BitcoinService {
       this.updateList.push({
         timestamp: this.lastUpdate,
         USD: this.currentPrice.bpi.USD.rate_float,
-        BRL: this.currentPrice.bpi.BRL.rate_float
+        BRL: this.currentPrice.bpi.BRL.rate_float,
       });
     });
   }

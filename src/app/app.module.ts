@@ -9,6 +9,7 @@ import { ThayllaComponent } from './thaylla/thaylla.component';
 import { TimerComponent } from './timer/timer.component';
 import { TimerService } from './timer.service';
 import { BitcoinComponent } from './bitcoin/bitcoin.component';
+import { BitcoinService } from './bitcoin.service';
 
 @NgModule({
   imports: [

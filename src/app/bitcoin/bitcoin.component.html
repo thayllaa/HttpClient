@@ -12,20 +12,19 @@
 
 <h5>BitCoin $ &nbsp; <button (click)="update()">Atualizar</button></h5>
 <p>
-<strong> Countdown: </strong>
-{{ bitcoinService.getTimer() }}s
+  <strong> Countdown: </strong>
+  {{ bitcoinService.getTimer() }}s
 </p>
 
 <table border="1">
-<tr>
-  <th>Data & hora</th>
-  <th>USD</th>
-  <th>GBP</th>
-  <th>EUR</th>
-</tr>
-<tr *ngFor="let price of this.bitcoinService.updateList">
-  <td>{{ price.timestamp | date: 'full' }}</td>
-  <td>{{ price.USD | currency }}</td>
-  <td>{{ price.BRL | currency }}</td>
-</tr>
+  <tr>
+    <th>Data & hora</th>
+    <th>USD</th>
+    <th>brl</th>
+  </tr>
+  <tr *ngFor="let price of this.bitcoinService.updateList">
+    <td>{{ price.timestamp | date: 'full' }}</td>
+    <td>{{ price.USD | currency }}</td>
+    <td>{{ price.BRL | currency }}</td>
+  </tr>
 </table>

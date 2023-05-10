@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { ThayllaComponent } from './thaylla/thaylla.component';
 import { TimerComponent } from './timer/timer.component';
 import { TimerService } from './timer.service';
+import { BitcoinComponent } from './bitcoin/bitcoin.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { TimerService } from './timer.service';
       { path: '', component: HomeComponent },
       { path: 'thaylla', component: ThayllaComponent },
       { path: 'timer', component: TimerComponent },
+      { path: 'bitcoin', component: BitcoinComponent}
     ]),
   ],
   declarations: [
@@ -25,8 +27,9 @@ import { TimerService } from './timer.service';
     HomeComponent,
     ThayllaComponent,
     TimerComponent,
+    BitcoinComponent
   ],
   bootstrap: [RootComponent],
-  providers: [  TimerService ]
+  providers: [ BitcoinService, TimerService ]
 })
 export class AppModule {}

@@ -21,8 +21,4 @@ export class BitcoinComponent implements OnInit {
     this.bitcoinService.update();
     this.githubService.update();
   }
-
-  getBitcoinRates() {
-    this.bitcoinService.update();
-  }
 }

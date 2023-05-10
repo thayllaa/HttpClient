@@ -14,7 +14,11 @@ export class BitcoinComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.githubService.update();
+    this.update();
+  }
+
+  update() {
+    this.bitcoinService.update();
   }
 
   updateBitcoinRates() {

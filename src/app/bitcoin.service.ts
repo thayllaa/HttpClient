@@ -5,16 +5,21 @@ interface Response {
   time: {
     updated: string;
   };
+  disclaimer: string;
   bpi: {
-    USD: {
+    [key in 'USD' | 'BRL' ]: {
       symbol: string;
+      description: string;
       rate_float: number;
-    };
-    BRL: {
-      symbol: string;
-      rate_float: number;
-    };
+      rate: string;
+    }
   };
+}
+
+interface PriceUpdate {
+  timestamp: Date;
+  USD: number;
+  BRL: number;
 }
 
 @Injectable()
@@ -28,7 +33,7 @@ export class BitcoinService {
   constructor(private http: HttpClient) {}
 
   update() {
-    this.http.get<Response>('https://api.coindesk.com/v1/bpi/currentprice/BRL.json')
+    this.http.get<Response>('https://api.coindesk.com/v1/bpi/currentprice.json')
     .subscribe(data => {
       this.currentPrice = data;
       this.list.push(data);

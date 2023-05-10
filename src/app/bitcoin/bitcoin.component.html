@@ -11,6 +11,10 @@
 <br />
 
 <h5>BitCoin $ &nbsp; <button (click)="update()">Atualizar</button></h5>
+<p>
+<strong> Countdown: </strong>
+{{ bitcoinService.getTimer() }}s
+</p>
 
 <table border="1">
   <tr>

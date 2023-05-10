@@ -1,12 +1,12 @@
 <table border="1">
-<tr>
-  <th>ID</th>
-  <th>LINK</th>
-</tr>
-<tr *ngFor="let repo of githubService.repos">
-  <td> {{ repo.id }} </td>
-  <td> {{ repo.full_name }} </td>
-</tr>
+  <tr>
+    <th>ID</th>
+    <th>LINK</th>
+  </tr>
+  <tr *ngFor="let repo of githubService.repos">
+    <td>{{ repo.id }}</td>
+    <td>{{ repo.full_name }}</td>
+  </tr>
 </table>
 <br />
 
@@ -17,9 +17,9 @@
     <th>USD</th>
     <th>BRL</th>
   </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+  <tr *ngFor="let rate of this.bitcoinService.list">
+    <td>{{ rate.time.updated }}</td>
+    <td>{{ rate.bpi.USD.rate_float }}</td>
+    <td>{{ rate.bpi.BRL.rate_float }}</td>
   </tr>
 </table>

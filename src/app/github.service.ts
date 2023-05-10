@@ -14,7 +14,7 @@ export class GithubService {
 
   update() {
     this.http
-      .get<Array<Repo>>('https://api.github.com/users/santana/repos')
+      .get<Array<Repo>>('https://api.github.com/users/thayllaa/repos')
       .subscribe((data) => {
         this.repos = data;
       });

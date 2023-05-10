@@ -25,18 +25,24 @@ interface PriceUpdate {
 @Injectable()
 export class BitcoinService {
   currentPrice: Response;
-  list: Array<Response> = [];
+  lastUpdate: Date;
 
   private timer: any;
   private counter = 0;
 
-  constructor(private http: HttpClient) {}
+  updateList: Array<PriceUpdate> = [];
+  constructor(private http: HttpClient) { }
 
   update() {
     this.http.get<Response>('https://api.coindesk.com/v1/bpi/currentprice.json')
     .subscribe(data => {
+      this.lastUpdate = new Date();
       this.currentPrice = data;
-      this.list.push(data);
+      this.updateList.push({
+        timestamp: this.lastUpdate,
+        USD: this.currentPrice.bpi.USD.rate_float,
+        BRL: this.currentPrice.bpi.BRL.rate_float
+      });
     });
   }
 

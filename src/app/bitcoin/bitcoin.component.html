@@ -17,14 +17,15 @@
 </p>
 
 <table border="1">
-  <tr>
-    <th>Data & Hora</th>
-    <th>USD</th>
-    <th>BRL</th>
-  </tr>
-  <tr *ngFor="let rate of this.bitcoinService.list">
-    <td>{{ rate.time.updated }}</td>
-    <td>{{ rate.bpi.USD.rate_float }}</td>
-    <td>{{ rate.bpi.BRL.rate_float }}</td>
-  </tr>
+<tr>
+  <th>Data- hora</th>
+  <th>USD</th>
+  <th>GBP</th>
+  <th>EUR</th>
+</tr>
+<tr *ngFor="let price of this.bitcoinService.updateList">
+  <td>{{ price.timestamp | date: 'full' }}</td>
+  <td>{{ price.USD | currency }}</td>
+  <td>{{ price.BRL | currency }}</td>
+</tr>
 </table>

@@ -11,11 +11,13 @@ import { TimerService } from './timer.service';
 import { BitcoinComponent } from './bitcoin/bitcoin.component';
 import { BitcoinService } from './bitcoin.service';
 import { GithubService } from './github.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'thaylla', component: ThayllaComponent },

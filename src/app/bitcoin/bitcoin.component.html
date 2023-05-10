@@ -3,7 +3,7 @@
   <th>ID</th>
   <th>LINK</th>
 </tr>
-<tr *ngFor="let repo of GithubService.repos">
+<tr *ngFor="let repo of this.GithubService.repos">
   <td> {{ repo.id }} </td>
   <td> {{ repo.full_name }} </td>
 </tr>

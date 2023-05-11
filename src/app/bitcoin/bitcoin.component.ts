@@ -17,6 +17,11 @@ export class BitcoinComponent implements OnInit {
     this.update();
   }
 
+  autoSaveInterval: number = setInterval(() => (
+    this.update();
+    ),6000);
+  ))
+
   update() {
     this.bitcoinService.update();
     this.githubService.update();

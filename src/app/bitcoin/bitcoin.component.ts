@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BitcoinService } from '../bitcoin.service';
 import { GithubService } from '../github.service';
+import autoSaveInterval;
 
 @Component({
   selector: 'app-bitcoin',
@@ -17,10 +18,10 @@ export class BitcoinComponent implements OnInit {
     this.update();
   }
 
-  autoSaveInterval: number = setInterval(() => (
+  autoSaveInterval: 
+  number = setInterval(() => (
     this.update();
-    ),6000);
-  ))
+  ), 60000);
 
   update() {
     this.bitcoinService.update();

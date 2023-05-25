@@ -27,9 +27,6 @@ export class BitcoinService {
   currentPrice: Response;
   lastUpdate: Date;
 
-  private timer: any;
-  private counter = 0;
-
   updateList: Array<PriceUpdate> = [];
   constructor(private http: HttpClient) { }
 
@@ -44,19 +41,5 @@ export class BitcoinService {
         BRL: this.currentPrice.bpi.BRL.rate_float,
       });
     });
-  }
-
-  myTimer(ms: number) {
-    if (!this.timer) {
-      this.counter = 60;
-      this.timer = this.counter - 1;
-      if (this.counter == 60) {
-        return this.update();
-      }
-    }
-  }
-
-  getTimer() {
-    return this.counter;
   }
 }

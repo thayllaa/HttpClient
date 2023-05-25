@@ -12,6 +12,7 @@ import { BitcoinComponent } from './bitcoin/bitcoin.component';
 import { BitcoinService } from './bitcoin.service';
 import { GithubService } from './github.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TempBitService } from './temp-bitcoin.service';
 
 @NgModule({
   imports: [
@@ -34,6 +35,6 @@ import { HttpClientModule } from '@angular/common/http';
     BitcoinComponent
   ],
   bootstrap: [RootComponent],
-  providers: [ BitcoinService, GithubService, TimerService ]
+  providers: [ BitcoinService, GithubService, TimerService, TempBitService ]
 })
 export class AppModule {}

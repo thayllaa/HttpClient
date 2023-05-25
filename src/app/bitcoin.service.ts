@@ -7,12 +7,12 @@ interface Response {
   };
   disclaimer: string;
   bpi: {
-    [key in 'USD' | 'BRL' ]: {
+    [key in 'USD' | 'BRL']: {
       symbol: string;
       description: string;
       rate_float: number;
       rate: string;
-    }
+    };
   };
 }
 
@@ -28,18 +28,19 @@ export class BitcoinService {
   lastUpdate: Date;
 
   updateList: Array<PriceUpdate> = [];
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   update() {
-    this.http.get<Response>('https://api.coindesk.com/v1/bpi/currentprice.json')
-    .subscribe(data => {
-      this.lastUpdate = new Date();
-      this.currentPrice = data;
-      this.updateList.push({
-        timestamp: this.lastUpdate,
-        USD: this.currentPrice.bpi.USD.rate_float,
-        BRL: this.currentPrice.bpi.BRL.rate_float,
+    this.http
+      .get<Response>('https://api.coindesk.com/v1/bpi/currentprice/BRL.json')
+      .subscribe((data) => {
+        this.lastUpdate = new Date();
+        this.currentPrice = data;
+        this.updateList.push({
+          timestamp: this.lastUpdate,
+          USD: this.currentPrice.bpi.USD.rate_float,
+          BRL: this.currentPrice.bpi.BRL.rate_float,
+        });
       });
-    });
   }
 }

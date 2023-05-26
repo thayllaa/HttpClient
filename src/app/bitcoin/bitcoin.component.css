@@ -1,0 +1,19 @@
+#table {
+  border-collapse: collapse;
+  width: auto;
+}
+
+#table td, #table th {
+  border: 1px double #013a65;
+  padding: 6px;
+}
+
+#table th {
+  padding-top: 7px;
+  padding-bottom: 2px;
+  text-align: center;
+  color: black;
+}
+h1, h2, h3, h4 {
+  font-weight: 800;
+}
